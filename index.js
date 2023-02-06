@@ -30,6 +30,7 @@ var guessesRemaining = 10
 //keyboard access//
 document.onkeyup = function(e) {
   var key = e.key.toLowerCase()
+  if(!/^[a-z]{1}$/g.test(key)) return
   if (randomSelect.includes(key) && correctLetters.indexOf(key) === -1) { 
     correctLetters.push(key)
   } else if (!randomSelect.includes(key) && incorrectLetters.indexOf(key) === -1) {
