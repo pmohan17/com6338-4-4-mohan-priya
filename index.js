@@ -21,8 +21,6 @@ var lossesShown = document.getElementById("losses")
 var correctLetters = []
 var incorrectLetters = []
 var letterGuessed = []
-var randomSelect
-var visibleWord
 var wins = 0
 var losses = 0 
 var guessesRemaining = 10
@@ -46,7 +44,7 @@ document.onkeyup = function(e) {
 
     runGame()
   }
-  if (guessesRemaining <= 0) { 
+  if (guessesRemaining === 0) { 
     losses++
     lossesShown.textContent = losses
     previousWord.textContent = randomSelect
@@ -66,7 +64,7 @@ document.onkeyup = function(e) {
       incorrectLettersShown.textContent = incorrectLetters
       wordToGuess.textContent = visibleWord
       }   
-   //Need functio   
+   //Need function to run game   
   function runGame () {
         randomSelect = words[Math.floor(Math.random()*words.length)]
         correctLetters = randomSelect.split()
