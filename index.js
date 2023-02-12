@@ -18,6 +18,7 @@ var incorrectLettersShown = document.getElementById("incorrect-letters")
 var previousWord = document.getElementById("previous-word")
 var winsShown = document.getElementById("wins")
 var lossesShown = document.getElementById("losses")
+var visibleWord = []
 var correctLetters = []
 var incorrectLetters = []
 var letterGuessed = []
@@ -67,7 +68,7 @@ document.onkeyup = function(e) {
    //Need function to run game   
   function runGame () {
         randomSelect = words[Math.floor(Math.random()*words.length)]
-        correctLetters = randomSelect.split()
+        correctLetters = []//randomSelect.split()//
         incorrectLetters = []
         guessesRemaining = 10
         
