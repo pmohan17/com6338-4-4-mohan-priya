@@ -27,7 +27,8 @@ var losses = 0
 var guessesRemaining = 10
 
 //keyboard access//
-document.onkeyup = function(e) {
+body=document.querySelector('body')
+body.onkeyup = function(e) {
   var key = e.key.toLowerCase()
   if(!/^[a-z]{1}$/g.test(key)) return
   if (randomSelect.includes(key) && correctLetters.indexOf(key) === -1) { 
